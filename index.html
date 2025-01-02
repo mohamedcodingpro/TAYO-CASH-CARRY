@@ -8,7 +8,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
   <script>
     function initMap() {
-      var storeLocation = { lat: -33.9248685, lng: 18.4240553 };
+      var storeLocation = { lat: -33.9248685, lng: 18.4240553 }; // Example location
       var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 12,
         center: storeLocation
@@ -35,7 +35,7 @@
   </script>
 </head>
 <body class="bg-gray-100 font-sans">
-  
+
   <!-- Header Section -->
   <header class="bg-red-800 text-white py-4">
     <div class="container mx-auto flex justify-between items-center flex-wrap">
@@ -60,6 +60,8 @@
         <a href="#" class="block md:inline hover:text-blue-300">Home</a>
         <a href="#about" class="block md:inline hover:text-blue-300">About Us</a>
         <a href="#specials" class="block md:inline hover:text-blue-300">Monthly Specials</a>
+        <a href="#rewards" class="block md:inline hover:text-blue-300">Rewards</a>
+        <a href="#testimonials" class="block md:inline hover:text-blue-300">Testimonials</a>
         <a href="#contact" class="block md:inline hover:text-blue-300">Contact Us</a>
         <a href="#store-locator" class="block md:inline hover:text-blue-300">Locate a Store</a>
       </nav>
@@ -96,19 +98,42 @@
     </div>
   </section>
 
-<!-- Monthly Specials Section -->
-<section id="specials" class="bg-gray-200 py-16 px-4">
-  <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold">Monthly Specials</h2>
-    <p class="mt-4 text-lg">Catch the hottest deals of the month, available for a limited time only!</p>
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-      <img src="./img.jpg" alt="Special Offer 1" class="rounded-lg shadow-lg w-full">
-      <img src="./pic.jpg" alt="Special Offer 2" class="rounded-lg shadow-lg w-full">
+  <!-- Monthly Specials Section -->
+  <section id="specials" class="bg-gray-200 py-16 px-4">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold">Monthly Specials</h2>
+      <p class="mt-4 text-lg">Catch the hottest deals of the month, available for a limited time only!</p>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <img src="./img.jpg" alt="Special Offer 1" class="rounded-lg shadow-lg w-full">
+        <img src="./pic.jpg" alt="Special Offer 2" class="rounded-lg shadow-lg w-full">
+      </div>
+      <a href="#" class="mt-6 inline-block bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-blue-300">View Monthly Specials Catalogue</a>
     </div>
-    <a href="#" class="mt-6 inline-block bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-blue-300">View Monthly Specials Catalogue</a>
-  </div>
-</section>
+  </section>
 
+  <!-- Rewards Program Section -->
+  <section id="rewards" class="bg-red-600 text-white py-16 px-4">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold">Rewards Program</h2>
+      <p class="mt-4 text-lg">Earn points for every purchase and redeem them for amazing discounts or exclusive offers!</p>
+      <div class="mt-6 space-x-4">
+        <a href="#contact" class="inline-block bg-white text-red-600 py-2 px-6 rounded-lg hover:bg-blue-300">Join the Rewards Program</a>
+        <a href="#rewards" class="inline-block bg-transparent border-2 border-white text-white py-2 px-6 rounded-lg hover:bg-blue-300">Check My Points</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="bg-gray-100 py-16 px-4">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold">Customer Testimonials</h2>
+      <p class="mt-4 text-lg">See what our satisfied customers have to say about their experience with TAYO Cash and Carry.</p>
+      <div class="mt-8 space-y-6">
+        <blockquote class="italic">"TAYO Cash and Carry always delivers great deals on bulk products. Highly recommend!" - Sarah</blockquote>
+        <blockquote class="italic">"Amazing customer service and unbeatable prices. A game-changer for my business." - John</blockquote>
+      </div>
+    </div>
+  </section>
 
   <!-- Store Locator Section -->
   <section id="store-locator" class="container mx-auto py-16 px-4">
@@ -125,26 +150,25 @@
   <section id="contact" class="bg-white py-16 px-4">
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold">Get in Touch with Us</h2>
-      <form id="contact-form" onsubmit="submitForm(event)" class="mt-8 max-w-lg mx-auto">
-        <input type="text" id="name" name="name" placeholder="Your Name" class="w-full mb-4 p-3 border border-gray-300 rounded-lg">
-        <input type="email" id="email" name="email" placeholder="Your Email" class="w-full mb-4 p-3 border border-gray-300 rounded-lg">
-        <textarea id="message" name="message" placeholder="Your Message" rows="4" class="w-full mb-4 p-3 border border-gray-300 rounded-lg"></textarea>
-        <button type="submit" class="bg-red-600 text-white py-3 px-6 rounded-lg hover:bg-blue-300">Send Message</button>
+      <p class="mt-4 text-lg">Visit us at:</p>
+      <p class="text-lg font-semibold">08 Carriage Cl, Crown Mines, Johannesburg</p>
+      <form id="contact-form" onsubmit="submitForm(event)" class="mt-6">
+        <div class="space-y-4">
+          <input id="name" type="text" placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded-md" required>
+          <input id="email" type="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 rounded-md" required>
+          <textarea id="message" placeholder="Your Message" class="w-full p-4 border border-gray-300 rounded-md" rows="4" required></textarea>
+          <button type="submit" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-blue-300">Send Message</button>
+        </div>
       </form>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer class="bg-red-800 text-white py-8 px-4">
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
     <div class="container mx-auto text-center">
-      <p>&copy; TAYO CASH AND CARRY | All Rights Reserved</p>
-      <div class="mt-4">
-        <a href="#" class="text-white hover:text-blue-300">Privacy Policy</a> | 
-        <a href="tel:0119898800" class="text-white hover:text-blue-300">Call Us: 011 989 8800</a> | 
-        <a href="mailto:info@devland.co.za" class="text-white hover:text-blue-300">Email Us: info@devland.co.za</a>
-      </div>
+      <p>&copy; 2025 TAYO CASH AND CARRY. All Rights Reserved.</p>
+      <p class="mt-2">Visit us at: 08 Carriage Cl, Crown Mines, Johannesburg</p>
     </div>
   </footer>
-
 </body>
 </html>
